@@ -31,6 +31,12 @@ module "resource_group" {
   rg_location = "centralindia"
 
 }
+module "resource_group" {
+  source      = "../Child/azure_resource_group"
+  rg_name     = "kkrg-infra2"
+  rg_location = "centralindia"
+
+}
 
 module "virt_net" {
   depends_on    = [module.resource_group]
